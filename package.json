@@ -1,0 +1,21 @@
+{
+	"name": "intuit",
+	"description": "Monitor server status",
+	"keywords": ["monitor", "mysql"],
+	"version": "0.0.0",
+	"author": "fluffybunnies",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:fluffybunnies/intuit.git"
+	},
+	"dependencies": {
+		"sext": "0.0.10",
+		"minimist": "0.2.0"
+	},
+	"devDependencies": {
+		"tape": "*"
+	},
+	"scripts": {
+		"test": "node test/test.js"
+	}
+}

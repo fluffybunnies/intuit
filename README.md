@@ -1,4 +1,11 @@
 intuit
 ======
 
-Monitor server status
+STUB
+
+Created to figure out why mysql was mysteriously dying.
+
+
+### Install
+
+
