@@ -19,4 +19,4 @@ __dirname=`realpath $__dirname`
 # install
 script="*/$interval * * * * $__dirname/inspect.sh"
 echo "installing crontab: $script"
-crontab_add 'inspect.sh' $script
+#crontab_add 'inspect.sh' $script

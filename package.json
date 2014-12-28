@@ -16,7 +16,7 @@
 		"tape": "*"
 	},
 	"scripts": {
-		"start": "install.sh",
+		"start": "bash install.sh",
 		"test": "node test/test.js"
 	},
 	"license": "MIT"
