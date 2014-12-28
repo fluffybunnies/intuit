@@ -5,7 +5,7 @@ defaultInterval=5
 interval=$1
 isNum='^[1-9]+$'
 if ! [[ "$interval" =~ $isNum ]]; then
-	echo "Defaulting to interval of $defaultInterval minutes"
+	echo "defaulting to interval of $defaultInterval minutes"
 	interval=$defaultInterval
 fi
 
@@ -22,4 +22,4 @@ __dirname=`realpath $__dirname`
 
 script="*/$interval * * * * $__dirname/inspect.sh"
 echo "installing crontab: $script"
-crontab_add 'inspect.sh' $script
+#crontab_add 'inspect.sh' $script
