@@ -19,7 +19,7 @@ Copy config.local.example.sh as config.local.sh
 #### Start
 
 ```
-npm start
+cd node_modules/intuit && npm start
 ```
 
 
