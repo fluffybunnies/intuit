@@ -32,6 +32,16 @@ echo "show full processlist:" >> $logFile
 echo 'show full processlist' | $mysqlConn >> $logFile 2>&1
 echo "$nl" >> $logFile
 
+# ps
+echo "ps aux | grep mysql:" >> $logFile
+ps aux | grep mysql >> $logFile 2>&1
+echo "$nl" >> $logFile
+
+# innodb status
+echo "show engine innodb status\G:" >> $logFile
+echo 'show engine innodb status\G' | $mysqlConn >> $logFile 2>&1
+echo "$nl" >> $logFile
+
 
 # ERROR_M38
 if [ "$testFailure" == "M38" ]; then
