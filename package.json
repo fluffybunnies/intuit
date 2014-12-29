@@ -23,7 +23,8 @@
 		"start": "bash install.sh"
 	},
 	"bin": {
-		"inspect": "./inspect.sh"
+		"inspect": "./inspect.sh",
+		"logrotate": "./bin/logrotate.sh"
 	},
 	"license": "MIT"
 }
