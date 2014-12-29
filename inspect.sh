@@ -18,7 +18,8 @@ mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
 # init log entry
 nl=$'\n'
-echo "---------- "`date`" ----------$nl" >> $logFile
+runKey=`date`
+echo "---------- BEGIN $runKey ----------$nl" >> $logFile
 
 # tail mysql logs
 for mysqlLogFile in ${mysqlLogFiles[*]}; do
@@ -65,6 +66,7 @@ if [ "$check" != "" ]; then
 fi
 
 
+echo "---------- END $runKey ----------$nl" >> $logFile
 echo "$nl$nl$nl" >> $logFile
 
 
