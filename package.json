@@ -20,11 +20,10 @@
 		"tape": "*"
 	},
 	"scripts": {
-		"start": "bash bin.sh install.sh"
+		"start": "bash install.sh"
 	},
 	"bin": {
-		"install": "./bin.sh install",
-		"inspect": "./bin.sh inspect"
+		"inspect": "./inspect.sh"
 	},
 	"license": "MIT"
 }

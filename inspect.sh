@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./bin.sh inspect --fail M38
+# ./inspect.sh --fail M38
 
 
 echo "START "`date`
@@ -16,8 +16,9 @@ done
 
 
 # update sys config
-./bin.sh make_sysconfig
+./make_sysconfig.sh
 . ./configure.sh
+. ./lib/util.sh
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
 
