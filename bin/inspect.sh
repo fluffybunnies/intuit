@@ -1,24 +1,23 @@
 #!/bin/bash
-# ./bin/inspect.sh M38
+# ./bin.sh inspect --fail M38
 
 
 echo "START "`date`
 
 
-cd `dirname $0`
-. ../configure.sh
-. ../lib/util.sh
-
-
-testFailure=$1
-if [ "$testFailure" != "" ]; then
-	echo "Testing Failure: $testFailure"
-fi
+i=1
+for arg in "$@"; do
+	i=$[i+1]
+	if [ "$arg" == "--fail" ]; then
+		testFailure=${!i}
+		echo "Testing Failure: $testFailure"
+	fi
+done
 
 
 # update sys config
-./make_sysconfig.sh
-
+./bin.sh make_sysconfig
+. ./configure.sh
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
 

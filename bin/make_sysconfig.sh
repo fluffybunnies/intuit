@@ -1,10 +1,6 @@
 #!/bin/bash
 # @todo: maybe also... lsof -nc mysqld | grep log
 
-cd `dirname $0`
-. ../configure.sh
-. ../lib/util.sh
-
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
 res=`echo 'show global variables where Variable_name in ("general_log_file","log_error","slow_query_log_file")' | $mysqlConn`
@@ -30,4 +26,4 @@ for line in $res; do
 done
 IFS=$IFS_
 
-echo 'export mysqlLogFiles=('${logs[@]}')' > ./config.sys.sh
+echo 'export mysqlLogFiles=('${logs[@]}')' > ./config/config.sys.sh
