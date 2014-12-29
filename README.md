@@ -15,8 +15,7 @@ npm install intuit && cd node_modules/intuit
 
 Copy config.local.example.sh as config.local.sh
 ```
-cp config.local.example.sh config.local.sh
-vim config.local.sh
+cp config.local.example.sh config.local.sh && vim config.local.sh
 ```
 
 

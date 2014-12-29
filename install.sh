@@ -36,4 +36,4 @@ fi
 
 cron="*/$interval * * * * echo 'intuit inspect'; $__dirname/inspect.sh"
 echo "installing crontab: $cron"
-crontab_add 'intuit inspect' $cron
+crontab_add 'intuit inspect' "$cron"
