@@ -11,6 +11,7 @@ __dirname=`realpath $__dirname`
 cd $__dirname
 
 . ./configure.sh
+. ./lib/util.sh
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 grants=`echo "show grants for current_user" | $mysqlConn | grep -i 'grant all privileges on *.*'`
