@@ -1,5 +1,5 @@
 
-export logFile=./intuit.log
+export logFile=/var/log/intuit.log
 export interval=5
 export tailLines=50
 

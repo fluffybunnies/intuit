@@ -28,11 +28,13 @@ if [ "$grants" == "" ]; then
 	echo ""
 fi
 
-./make_sysconfig.sh
+./bin/make_sysconfig.sh
 
 cron="*/$interval * * * * $__dirname/inspect.sh > /dev/null #intuitInspect"
 echo "installing crontab: $cron"
-crontab_add '#intuitInspect' "$cron"
+#crontab_add '#intuitInspect' "$cron"
 
 # rotate log
-cron="* 3 * * * $__dirname/bin/logrotate.sh $rotateMaxFiles '$logFile'"
+cron="* 3 * * * $__dirname/bin/logrotate.sh $rotateMaxFiles '$logFile' > /dev/null #intuitRotateLog"
+echo "installing crontab: $cron"
+#crontab_add '#intuitRotateLog' "$cron"

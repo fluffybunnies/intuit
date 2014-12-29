@@ -1,6 +1,8 @@
 #!/bin/bash
 # @todo: maybe also... lsof -nc mysqld | grep log
 
+cd `dirname $0`/..
+
 . ./configure.sh
 . ./lib/util.sh
 

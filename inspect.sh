@@ -17,7 +17,7 @@ done
 
 
 # update sys config
-./make_sysconfig.sh
+./bin/make_sysconfig.sh
 . ./configure.sh
 . ./lib/util.sh
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
