@@ -28,6 +28,9 @@ nl=$'\n'
 runKey=`date`
 echo "---------- BEGIN $runKey ----------$nl" >> $logFile
 
+# make sure we've got enough environment in crontab
+echo "PATH: $PATH" >> $logFile
+
 # tail mysql logs
 for mysqlLogFile in ${mysqlLogFiles[*]}; do
 	echo "$mysqlLogFile:" >> $logFile
@@ -70,7 +73,6 @@ if [ "$check" != "" ]; then
 		echo "handle error: $errorHandler_M38..." >> $logFile
 		eval $errorHandler_M38 >> $logFile 2>&1
 	fi
-	echo "PATH: $PATH"
 fi
 
 
