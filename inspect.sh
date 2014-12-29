@@ -3,6 +3,7 @@
 
 
 echo "START "`date`
+cd `dirname $0`
 
 
 i=1
