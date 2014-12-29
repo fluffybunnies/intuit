@@ -1,3 +1,4 @@
+#!/bin/bash
 # @todo: maybe also... lsof -nc mysqld | grep log
 
 . ./configure.sh
