@@ -18,9 +18,10 @@ cd $__dirname
 
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
-grants=`echo "show grants for current_user" | $mysqlConn` | grep -i 'grant all privileges on *.*'
+grants=`echo "show grants for current_user" | $mysqlConn | grep -i 'grant all privileges on *.*'`
 if [ "$grants" == "" ]; then
 	echo $'\n'"!!! WARNING !!! Mysql user does not have super privileges and unable to monitor all processes."$'\n'
+	currentUser=`echo 'select user(), current_user()' | $mysqlConn`
 	superUsers=`echo 'select GRANTEE from information_schema.user_privileges where privilege_type="SUPER"' | $mysqlConn`
 	echo "Super Users:"
 	if [ "$superUsers" == "" ]; then
@@ -36,4 +37,4 @@ fi
 
 cron="*/$interval * * * * echo 'intuit inspect' > /dev/null; $__dirname/bin/inspect.sh > /dev/null"
 echo "installing crontab: $cron"
-#crontab_add 'intuit inspect' "$cron"
+crontab_add 'intuit inspect' "$cron"
