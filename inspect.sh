@@ -33,13 +33,13 @@ echo 'show full processlist' | $mysqlConn >> $logFile 2>&1
 echo "$nl" >> $logFile
 
 
-#echo $mysqlConn
-mysqlConn="$mysqlConn --socket=/dev/null"
-
-
+# ERROR_M38
+if [ "$testFailure" == "M38" ]; then
+	mysqlConn="$mysqlConn --socket=/dev/null"
+fi
 out=`echo 'select 1' | $mysqlConn 2>&1`
 check=`echo $out | grep -i "Can't connect to local MySQL server through socket"`
-if [ "$check" != "" ] || [ "$testFailure" == "M38" ]; then
+if [ "$check" != "" ]; then
 	# this is the error we are looking for
 	echo "!!! ERROR_M38 !!!" >> $logFile
 	echo $out >> $logFile
