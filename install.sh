@@ -34,6 +34,6 @@ fi
 ./make_sysconfig.sh
 
 
-cron="*/$interval * * * * echo 'intuit inspect'; $__dirname/inspect.sh"
+cron="*/$interval * * * * echo 'intuit inspect' && $__dirname/inspect.sh > /dev/null"
 echo "installing crontab: $cron"
 crontab_add 'intuit inspect' "$cron"
