@@ -3,6 +3,7 @@
 . ./config/config.sh
 defaultInterval=$interval
 defaultTailLines=$tailLines
+defaultRotateMaxFiles=$rotateMaxFiles
 if [ -f ./config/config.local.sh ]; then
 	. ./config/config.local.sh
 fi
@@ -20,4 +21,8 @@ fi
 if ! [[ "$tailLines" =~ $positiveInt ]]; then
 	echo "using default tailLines: $defaultTailLines"
 	tailLines=$defaultTailLines
+fi
+if ! [[ "$rotateMaxFiles" =~ $positiveInt ]]; then
+	echo "using default rotateMaxFiles: $defaultRotateMaxFiles"
+	rotateMaxFiles=$defaultRotateMaxFiles
 fi
