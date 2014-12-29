@@ -26,6 +26,6 @@ npm start
 
 
 #### To Do
-	[] Rotate logs
-	[] Better check for super user privileges
+	- Rotate logs
+	- Better check for super user privileges
 
