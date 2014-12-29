@@ -34,6 +34,6 @@ npm install intuit && cd ./node_modules/intuit && cp ./config/config.local.examp
 
 
 #### To Do
-- Rotate logs
 - Better check for super user privileges
+- CPU info
 
