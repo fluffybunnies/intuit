@@ -2,6 +2,8 @@
 # ./bin/inspect.sh M38
 
 
+echo "START "`date`
+
 . ./configure.sh
 . ./lib/util.sh
 
@@ -71,3 +73,4 @@ echo "---------- END $runKey ----------$nl" >> $logFile
 echo "$nl$nl$nl" >> $logFile
 
 
+echo "END "`date`
