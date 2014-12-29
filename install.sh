@@ -33,3 +33,6 @@ fi
 cron="*/$interval * * * * $__dirname/inspect.sh > /dev/null #intuitInspect"
 echo "installing crontab: $cron"
 crontab_add '#intuitInspect' "$cron"
+
+# rotate log
+cron="* 3 * * * $__dirname/bin/logrotate.sh $rotateMaxFiles '$logFile'"
