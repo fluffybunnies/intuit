@@ -27,14 +27,14 @@ for mysqlLogFile in ${mysqlLogFiles[*]}; do
 	echo "$nl" >> $logFile
 done
 
-# mysql process list
-echo "show full processlist:" >> $logFile
-echo 'show full processlist' | $mysqlConn >> $logFile 2>&1
-echo "$nl" >> $logFile
-
 # ps
 echo "ps aux | grep mysql:" >> $logFile
 ps aux | grep mysql >> $logFile 2>&1
+echo "$nl" >> $logFile
+
+# mysql process list
+echo "show full processlist:" >> $logFile
+echo 'show full processlist' | $mysqlConn >> $logFile 2>&1
 echo "$nl" >> $logFile
 
 # innodb status
