@@ -5,7 +5,6 @@ intuit
 #### The problem
 
 Mysql was mysteriously stopping. When I logged in to check on it, mysqld was down:
-> # mysqladmin processlist
 > mysqladmin: connect to server at 'localhost' failed
 > error: 'Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (111)'
 > Check that mysqld is running and that the socket: '/var/run/mysqld/mysqld.sock' exists!
