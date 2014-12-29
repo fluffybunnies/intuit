@@ -13,16 +13,14 @@ Mysql was mysteriously stopping. When I logged in to check on it, mysqld was dow
 #### What it do
 
 Logs a history of information about the server's state leading up to the fault.
-
 - Every n minutes a swath of system information is logged, including
-	- Tail of log files nabbed from SHOW GLOBAL VARIABLES the last time mysql was working
-	- Indications of hung queries via SHOW FULL PROCESSLIST
-	- Memory and CPU usage via SHOW ENGINE INNODB
-	- Timeline of mysqld's aliveness via ps aux | grep mysql
+	- Tail of log files nabbed from ```SHOW GLOBAL VARIABLES``` the last time mysql was working
+	- Indications of hung queries via ```SHOW FULL PROCESSLIST```
+	- Memory and CPU usage via ```SHOW ENGINE INNODB```
+	- Timeline of mysqld's aliveness via ```ps aux | grep mysql```
 	- ...and more
 - Logs are rotated and dropped according to configurable settings
-- Option to band-aid the problem upon detection by running any custom script, defaults to
-	```service mysql restart```
+- Option to band-aid the problem upon detection by running any custom script, defaults to ```service mysql restart```
 
 
 #### What it will do
