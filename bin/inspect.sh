@@ -4,8 +4,11 @@
 
 echo "START "`date`
 
-. ./configure.sh
-. ./lib/util.sh
+
+cd `dirname $0`
+. ../configure.sh
+. ../lib/util.sh
+
 
 testFailure=$1
 if [ "$testFailure" != "" ]; then
@@ -14,7 +17,7 @@ fi
 
 
 # update sys config
-./bin/make_sysconfig.sh
+./make_sysconfig.sh
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
