@@ -7,7 +7,7 @@ Created to figure out why mysql was mysteriously dying.
 #### Install
 
 ```
-npm install intuit && cd node_modules/intuit
+npm install intuit && cd ./node_modules/intuit
 ```
 
 
@@ -15,7 +15,7 @@ npm install intuit && cd node_modules/intuit
 
 Copy config.local.example.sh as config.local.sh
 ```
-cp config.local.example.sh config.local.sh && vim config.local.sh
+cp ./config/config.local.example.sh ./config/config.local.sh && vim ./config/config.local.sh
 ```
 
 
@@ -29,7 +29,7 @@ npm start
 #### Quickstart using defaults
 
 ```
-npm install intuit && cd node_modules/intuit && cp config.local.example.sh config.local.sh && cat config.local.sh && npm start
+npm install intuit && cd ./node_modules/intuit && cp ./config/config.local.example.sh ./config/config.local.sh && cat ./config/config.local.sh && npm start
 ```
 
 

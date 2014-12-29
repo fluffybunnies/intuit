@@ -14,7 +14,7 @@ cd $__dirname
 
 
 . ./configure.sh
-. ./util.sh
+. ./lib/util.sh
 
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
@@ -31,9 +31,9 @@ if [ "$grants" == "" ]; then
 	echo ""
 fi
 
-./make_sysconfig.sh
+./bin/make_sysconfig.sh
 
 
-cron="*/$interval * * * * echo 'intuit inspect' > /dev/null; $__dirname/inspect.sh > /dev/null"
+cron="*/$interval * * * * echo 'intuit inspect' > /dev/null; $__dirname/bin/inspect.sh > /dev/null"
 echo "installing crontab: $cron"
-crontab_add 'intuit inspect' "$cron"
+#crontab_add 'intuit inspect' "$cron"

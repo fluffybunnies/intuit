@@ -4,4 +4,4 @@ export interval=5
 export mysqlHost=
 export mysqlUser=root
 export mysqlPass=
-export tailLines=20
+export tailLines=50

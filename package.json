@@ -6,7 +6,7 @@
 		"mysql",
 		"(38)"
 	],
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"author": "fluffybunnies",
 	"repository": {
 		"type": "git",
@@ -20,8 +20,10 @@
 		"tape": "*"
 	},
 	"scripts": {
-		"start": "bash install.sh",
-		"test": "node test/test.js"
+		"start": "bash install.sh"
+	},
+	"bin": {
+		"inspect": "bin/inspect.sh"
 	},
 	"license": "MIT"
 }

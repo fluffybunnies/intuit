@@ -1,8 +1,9 @@
 #!/bin/bash
+# ./bin/inspect.sh M38
+
 
 . ./configure.sh
-. ./util.sh
-
+. ./lib/util.sh
 
 testFailure=$1
 if [ "$testFailure" != "" ]; then
@@ -11,7 +12,7 @@ fi
 
 
 # update sys config
-./make_sysconfig.sh
+./bin/make_sysconfig.sh
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 

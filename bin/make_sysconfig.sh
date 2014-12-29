@@ -2,7 +2,7 @@
 # @todo: maybe also... lsof -nc mysqld | grep log
 
 . ./configure.sh
-. ./util.sh
+. ./lib/util.sh
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
