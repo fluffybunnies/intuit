@@ -1,7 +1,11 @@
 {
 	"name": "intuit",
 	"description": "Monitor server status",
-	"keywords": ["monitor", "mysql"],
+	"keywords": [
+		"monitor",
+		"mysql",
+		"(38)"
+	],
 	"version": "0.0.0",
 	"author": "fluffybunnies",
 	"repository": {
