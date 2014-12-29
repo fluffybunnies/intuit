@@ -1,5 +1,6 @@
 
 export logFile=./intuit.log
+export interval=5
 export mysqlHost=
 export mysqlUser=
 export mysqlPass=
