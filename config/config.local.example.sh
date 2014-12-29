@@ -9,4 +9,4 @@ export mysqlPass=
 
 export rotateMaxFiles=10
 
-export errorHandler_M38="echo 'rebooting mysql...' && PATH=/sbin:$PATH && service mysql restart"
+export errorHandler_M111="echo 'rebooting mysql...' && PATH=/sbin:$PATH && service mysql restart"

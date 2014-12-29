@@ -67,11 +67,11 @@ out=`echo 'select 1' | $mysqlConn 2>&1`
 check=`echo $out | grep -i "Can't connect to local MySQL server through socket"`
 if [ "$check" != "" ]; then
 	# this is the error we are looking for
-	echo "!!! ERROR_M38 !!!" >> $logFile
+	echo "!!! ERROR_M111 !!!" >> $logFile
 	echo $out >> $logFile
-	if [ "$errorHandler_M38" != "" ]; then
-		echo "handle error: $errorHandler_M38..." >> $logFile
-		eval $errorHandler_M38 >> $logFile 2>&1
+	if [ "$errorHandler_M111" != "" ]; then
+		echo "handle error: $errorHandler_M111..." >> $logFile
+		eval $errorHandler_M111 >> $logFile 2>&1
 	fi
 fi
 
