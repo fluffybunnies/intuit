@@ -26,6 +26,13 @@ npm start
 ```
 
 
+#### Quickstart using defaults
+
+```
+npm install intuit && cd node_modules/intuit && cp config.local.example.sh config.local.sh && cat config.local.sh && npm start
+```
+
+
 #### To Do
 - Rotate logs
 - Better check for super user privileges
