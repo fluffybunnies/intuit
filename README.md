@@ -60,4 +60,6 @@ npm install intuit && cd ./node_modules/intuit && cp ./config/config.local.examp
 #### To Do
 - Better check for super user privileges
 - CPU info
+- Prettier logs
+- Solve more problems!
 
