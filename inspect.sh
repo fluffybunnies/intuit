@@ -42,6 +42,11 @@ echo "show engine innodb status\G:" >> $logFile
 echo 'show engine innodb status\G' | $mysqlConn >> $logFile 2>&1
 echo "$nl" >> $logFile
 
+# show profiles
+echo "show profiles; show profile;" >> $logFile
+echo 'show profiles; show profile;' | $mysqlConn >> $logFile 2>&1
+echo "$nl" >> $logFile
+
 
 # ERROR_M38
 if [ "$testFailure" == "M38" ]; then
