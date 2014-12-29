@@ -10,7 +10,7 @@ __dirname=`dirname $0`
 __dirname=`realpath $__dirname`
 cd $__dirname
 
-. ./configure.sh
+. ./lib/configure.sh
 . ./lib/util.sh
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
@@ -32,9 +32,9 @@ fi
 
 cron="*/$interval * * * * $__dirname/inspect.sh > /dev/null #intuitInspect"
 echo "installing crontab: $cron"
-#crontab_add '#intuitInspect' "$cron"
+crontab_add '#intuitInspect' "$cron"
 
 # rotate log
 cron="* 3 * * * $__dirname/bin/logrotate.sh $rotateMaxFiles '$logFile' > /dev/null #intuitRotateLog"
 echo "installing crontab: $cron"
-#crontab_add '#intuitRotateLog' "$cron"
+crontab_add '#intuitRotateLog' "$cron"

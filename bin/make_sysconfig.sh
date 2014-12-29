@@ -3,7 +3,7 @@
 
 cd `dirname $0`/..
 
-. ./configure.sh
+. ./lib/configure.sh
 . ./lib/util.sh
 
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`

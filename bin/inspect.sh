@@ -3,7 +3,7 @@
 
 
 echo "START "`date`
-cd `dirname $0`
+cd `dirname $0`/..
 
 
 i=1
@@ -18,7 +18,7 @@ done
 
 # update sys config
 ./bin/make_sysconfig.sh
-. ./configure.sh
+. ./lib/configure.sh
 . ./lib/util.sh
 mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
