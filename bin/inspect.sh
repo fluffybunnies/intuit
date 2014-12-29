@@ -70,6 +70,7 @@ if [ "$check" != "" ]; then
 		echo "handle error: $errorHandler_M38..." >> $logFile
 		eval $errorHandler_M38 >> $logFile 2>&1
 	fi
+	echo "PATH: $PATH"
 fi
 
 

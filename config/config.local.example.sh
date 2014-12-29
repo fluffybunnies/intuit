@@ -9,4 +9,4 @@ export mysqlPass=
 
 export rotateMaxFiles=10
 
-export errorHandler_M38="echo 'rebooting mysql...' && /etc/init.d/mysql restart"
+export errorHandler_M38="echo 'rebooting mysql...' && /usr/sbin/service mysql restart"
