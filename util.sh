@@ -28,13 +28,13 @@ buildMysqlConn(){
 	db=$4
 	cmd='mysql'
 	if [ "$host" != "" ]; then
-		cmd=$cmd" --host '$host'"
+		cmd=$cmd" --host='$host'"
 	fi
 	if [ "$user" != "" ]; then
-		cmd=$cmd" --user '$user'"
+		cmd=$cmd" --user='$user'"
 	fi
 	if [ "$pass" != "" ]; then
-		cmd=$cmd" --password '$pass'"
+		cmd=$cmd" --password='$pass'"
 	fi
 	if [ "$db" != "" ]; then
 		cmd=$cmd" $db"
