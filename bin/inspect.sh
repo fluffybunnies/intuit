@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./inspect.sh --fail M38
+# ./inspect.sh --fail M111
 
 
 echo "START "`date`
