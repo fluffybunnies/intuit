@@ -60,7 +60,7 @@ echo "$nl" >> $logFile
 
 
 # ERROR_M38
-if [ "$testFailure" == "M38" ]; then
+if [ "$testFailure" == "M111" ]; then
 	mysqlConn="$mysqlConn --socket=/dev/null"
 fi
 out=`echo 'select 1' | $mysqlConn 2>&1`
