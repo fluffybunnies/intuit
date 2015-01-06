@@ -35,6 +35,6 @@ echo "installing crontab: $cron"
 crontab_add '#intuitInspect' "$cron"
 
 # rotate log
-cron="* 3 * * * $__dirname/bin/logrotate.sh $rotateMaxFiles '$logFile' > /dev/null #intuitRotateLog"
+cron="0 3 * * * $__dirname/bin/logrotate.sh $rotateMaxFiles '$logFile' > /dev/null #intuitRotateLog"
 echo "installing crontab: $cron"
 crontab_add '#intuitRotateLog' "$cron"
