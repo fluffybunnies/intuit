@@ -59,7 +59,7 @@ echo 'show profiles; show profile;' | $mysqlConn >> $logFile 2>&1
 echo "$nl" >> $logFile
 
 
-# ERROR_M38
+# ERROR_M111
 if [ "$testFailure" == "M111" ]; then
 	mysqlConn="$mysqlConn --socket=/dev/null"
 fi
