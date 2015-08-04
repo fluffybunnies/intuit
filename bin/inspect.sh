@@ -20,7 +20,6 @@ done
 ./bin/make_sysconfig.sh
 . ./lib/configure.sh
 . ./lib/util.sh
-mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
 
 
 # init log entry
@@ -45,25 +44,26 @@ echo "$nl" >> $logFile
 
 # mysql process list
 echo "show full processlist:" >> $logFile
-echo 'show full processlist' | $mysqlConn >> $logFile 2>&1
+echo 'show full processlist' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass >> $logFile 2>&1
 echo "$nl" >> $logFile
 
 # innodb status
 echo "show engine innodb status\G:" >> $logFile
-echo 'show engine innodb status\G' | $mysqlConn >> $logFile 2>&1
+echo 'show engine innodb status\G' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass >> $logFile 2>&1
 echo "$nl" >> $logFile
 
 # show profiles
 echo "show profiles; show profile;" >> $logFile
-echo 'show profiles; show profile;' | $mysqlConn >> $logFile 2>&1
+echo 'show profiles; show profile;' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass >> $logFile 2>&1
 echo "$nl" >> $logFile
 
 
 # ERROR_M111
 if [ "$testFailure" == "M111" ]; then
-	mysqlConn="$mysqlConn --socket=/dev/null"
+	out=`echo 'select 1' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass --socket=/dev/null 2>&1`
+else
+	out=`echo 'select 1' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass 2>&1`
 fi
-out=`echo 'select 1' | $mysqlConn 2>&1`
 check=`echo $out | grep -i "Can't connect to local MySQL server through socket"`
 if [ "$check" != "" ]; then
 	# this is the error we are looking for

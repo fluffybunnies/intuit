@@ -13,12 +13,11 @@ cd $__dirname
 . ./lib/configure.sh
 . ./lib/util.sh
 
-mysqlConn=`buildMysqlConn "$mysqlHost" "$mysqlUser" "$mysqlPass"`
-grants=`echo "show grants for current_user" | $mysqlConn | grep -i 'grant all privileges on *.*'`
+grants=`echo "show grants for current_user" | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass | grep -i 'grant all privileges on *.*'`
 if [ "$grants" == "" ]; then
 	echo $'\n'"!!! WARNING !!! Mysql user does not have super privileges and unable to monitor all processes."$'\n'
-	currentUser=`echo 'select user(), current_user()' | $mysqlConn`
-	superUsers=`echo 'select GRANTEE from information_schema.user_privileges where privilege_type="SUPER"' | $mysqlConn`
+	currentUser=`echo 'select user(), current_user()' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass`
+	superUsers=`echo 'select GRANTEE from information_schema.user_privileges where privilege_type="SUPER"' | mysql -h$mysqlHost -u$mysqlUser -p$mysqlPass`
 	echo "Super Users:"
 	if [ "$superUsers" == "" ]; then
 		echo "[None Found]"
